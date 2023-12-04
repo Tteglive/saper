@@ -7,4 +7,5 @@ struct game{
 
   void init();
   void run();
+  static void place_bombs(board& b, int num_bombs);
 };
