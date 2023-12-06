@@ -1,25 +1,84 @@
 #include "board.h"
 
-void initialize_board(board& b, int length, int height) {
-    b.length = length;
-    b.height = height;
+// Определения конструкторов
+board::board() : length(0), height(0), fields(nullptr) {}
 
-    // Выделяем память для массива полей
-    b.fields = new field_type*[length];
+board::board(const board& other) : length(other.length), height(other.height) {
+    initialize_board(*this, length, height);
+
     for (int i = 0; i < length; ++i) {
-        b.fields[i] = new field_type[height];
+        for (int j = 0; j < height; ++j) {
+            fields[i][j] = other.fields[i][j];
+        }
     }
 }
 
-void release_board(board& b) {
-    // Освобождаем выделенную память
+board::board(int length, int height) : length(length), height(height) {
+    initialize_board(*this, length, height);
+}
+
+// Определение оператора копирования
+board& board::operator=(const board& other) {
+    if (this != &other) {
+        release();
+        length = other.length;
+        height = other.height;
+        initialize_board(*this, length, height);
+
+        for (int i = 0; i < length; ++i) {
+            for (int j = 0; j < height; ++j) {
+                fields[i][j] = other.fields[i][j];
+            }
+        }
+    }
+    return *this;
+}
+
+// Определение оператора сравнения
+bool board::operator==(const board& other) const {
+    if (length != other.length || height != other.height) {
+        return false;
+    }
+
+    for (int i = 0; i < length; ++i) {
+        for (int j = 0; j < height; ++j) {
+            if (fields[i][j] != other.fields[i][j]) {
+                return false;
+            }
+        }
+    }
+
+    return true;
+}
+
+// Определение метода для освобождения памяти
+void board::release() {
+    for (int i = 0; i < length; ++i) {
+        delete[] fields[i];
+    }
+    delete[] fields;
+    length = 0;
+    height = 0;
+    fields = nullptr;
+}
+
+// Определение оператора вывода
+std::ostream& operator<<(std::ostream& os, const board& b) {
     for (int i = 0; i < b.length; ++i) {
-        delete[] b.fields[i];
+        for (int j = 0; j < b.height; ++j) {
+            os << b.fields[i][j] << " ";
+        }
+        os << std::endl;
     }
-    delete[] b.fields;
+    return os;
 }
 
-// Метод для установки бомб на доске
-void place_bombs(board& b, int num_bombs) {
-    // Код для расстановки бомб на доске
+// Определение оператора ввода
+std::istream& operator>>(std::istream& is, board& b) {
+    for (int i = 0; i < b.length; ++i) {
+        for (int j = 0; j < b.height; ++j) {
+            is >> b.fields[i][j];
+        }
+    }
+    return is;
 }
