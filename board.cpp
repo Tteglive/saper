@@ -1,20 +1,13 @@
 #include "board.h"
+#include <algorithm>
 
 // Определения конструкторов
-board::board() : length(0), height(0), fields(nullptr) {}
+board::board() : length(0), height(0), fields() {}
 
-board::board(const board& other) : length(other.length), height(other.height) {
-    initialize_board(*this, length, height);
-
-    for (int i = 0; i < length; ++i) {
-        for (int j = 0; j < height; ++j) {
-            fields[i][j] = other.fields[i][j];
-        }
-    }
-}
+board::board(const board& other) : length(other.length), height(other.height), fields(other.fields){}
 
 board::board(int length, int height) : length(length), height(height) {
-    initialize_board(*this, length, height);
+    initialize_board(length, height);
 }
 
 // Определение оператора копирования
@@ -23,50 +16,32 @@ board& board::operator=(const board& other) {
         release();
         length = other.length;
         height = other.height;
-        initialize_board(*this, length, height);
-
-        for (int i = 0; i < length; ++i) {
-            for (int j = 0; j < height; ++j) {
-                fields[i][j] = other.fields[i][j];
-            }
-        }
+        fields = other.fields;
     }
     return *this;
 }
 
 // Определение оператора сравнения
 bool board::operator==(const board& other) const {
-    if (length != other.length || height != other.height) {
-        return false;
-    }
-
-    for (int i = 0; i < length; ++i) {
-        for (int j = 0; j < height; ++j) {
-            if (fields[i][j] != other.fields[i][j]) {
-                return false;
-            }
-        }
-    }
-
-    return true;
+    return length == other.length && height == other.height && fields == other.fields;
 }
 
 // Определение метода для освобождения памяти
-void board::release() {
-    for (int i = 0; i < length; ++i) {
-        delete[] fields[i];
-    }
-    delete[] fields;
+    void board::release(){
     length = 0;
     height = 0;
-    fields = nullptr;
+    fields.clear();
+}
+
+void board::initialize_board(int length, int height) {
+    fields = std::vector<std::vector<field_type>>(length, std::vector<field_type>(height, empty));
 }
 
 // Определение оператора вывода
 std::ostream& operator<<(std::ostream& os, const board& b) {
-    for (int i = 0; i < b.length; ++i) {
-        for (int j = 0; j < b.height; ++j) {
-            os << b.fields[i][j] << " ";
+    for (const auto& row : b.fields) {
+        for (field_type cell : row) {
+            os << static_cast<int>(cell) << " ";
         }
         os << std::endl;
     }
@@ -75,9 +50,11 @@ std::ostream& operator<<(std::ostream& os, const board& b) {
 
 // Определение оператора ввода
 std::istream& operator>>(std::istream& is, board& b) {
-    for (int i = 0; i < b.length; ++i) {
-        for (int j = 0; j < b.height; ++j) {
-            is >> b.fields[i][j];
+    for (auto& row : b.fields) {
+        for (field_type& cell : row){
+          int value;
+          is >> value;
+          cell = static_cast<field_type>(value);
         }
     }
     return is;
