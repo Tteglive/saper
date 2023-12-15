@@ -1,11 +1,17 @@
 #pragma once
-#include "field.h"
+#include <iostream>
+#include <vector>
 
-struct board{
+enum field_type {
+  empty,
+  bomb
+};
+
+struct board {
   int length;
   int height;
-  field_type ** fields;
-};
+  std::vector<std::vector<field_type>> fields;
+
 // Конструкторы
     board(); // Конструктор по умолчанию
     board(const board& other); // Конструктор копирования
@@ -21,4 +27,6 @@ struct board{
 
     // Метод для освобождения памяти
     void release();
+
+    void initialize_board(int length, int height);
 };
