@@ -1,0 +1,76 @@
+\doxysection{game Struct Reference}
+\hypertarget{structgame}{}\label{structgame}\index{game@{game}}
+
+
+Represents the Minesweeper game (game structure).  
+
+
+
+
+{\ttfamily \#include $<$game.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{structgame_ac1c1df7d822f92c4ffe0e26d87564f3a}\label{structgame_ac1c1df7d822f92c4ffe0e26d87564f3a} 
+void {\bfseries init} ()
+\begin{DoxyCompactList}\small\item\em Initializes the game, placing bombs on the board. \end{DoxyCompactList}\item 
+\Hypertarget{structgame_ac0989b3bcd3a7a806cd7c3211bc339e8}\label{structgame_ac0989b3bcd3a7a806cd7c3211bc339e8} 
+void {\bfseries run} ()
+\begin{DoxyCompactList}\small\item\em Runs the game. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{structgame_af825e954a97162af3257cbe1ada665a9}{place\+\_\+bombs}} (\mbox{\hyperlink{structboard}{board}} \&b, int \mbox{\hyperlink{structgame_a2fad09750ad5be69737fe1a3cd9406aa}{num\+\_\+bombs}})
+\begin{DoxyCompactList}\small\item\em Static method to place bombs on the board. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structboard}{board}} \mbox{\hyperlink{structgame_a3c381995acc17a0ac654367fd160fb7a}{brd}}
+\item 
+int \mbox{\hyperlink{structgame_a2fad09750ad5be69737fe1a3cd9406aa}{num\+\_\+bombs}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents the Minesweeper game (game structure). 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{structgame_af825e954a97162af3257cbe1ada665a9}\label{structgame_af825e954a97162af3257cbe1ada665a9} 
+\index{game@{game}!place\_bombs@{place\_bombs}}
+\index{place\_bombs@{place\_bombs}!game@{game}}
+\doxysubsubsection{\texorpdfstring{place\_bombs()}{place\_bombs()}}
+{\footnotesize\ttfamily void game\+::place\+\_\+bombs (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structboard}{board}} \&}]{b,  }\item[{int}]{num\+\_\+bombs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Static method to place bombs on the board. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em b} & The game board. \\
+\hline
+{\em num\+\_\+bombs} & Number of bombs to place. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{structgame_a3c381995acc17a0ac654367fd160fb7a}\label{structgame_a3c381995acc17a0ac654367fd160fb7a} 
+\index{game@{game}!brd@{brd}}
+\index{brd@{brd}!game@{game}}
+\doxysubsubsection{\texorpdfstring{brd}{brd}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structboard}{board}} game\+::brd}
+
+Game board. \Hypertarget{structgame_a2fad09750ad5be69737fe1a3cd9406aa}\label{structgame_a2fad09750ad5be69737fe1a3cd9406aa} 
+\index{game@{game}!num\_bombs@{num\_bombs}}
+\index{num\_bombs@{num\_bombs}!game@{game}}
+\doxysubsubsection{\texorpdfstring{num\_bombs}{num\_bombs}}
+{\footnotesize\ttfamily int game\+::num\+\_\+bombs}
+
+Number of bombs in the game. 
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{game_8h}{game.\+h}}\item 
+game.\+cpp\end{DoxyCompactItemize}

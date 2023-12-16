@@ -1,0 +1,23 @@
+\doxysection{board.\+h}
+\hypertarget{board_8h_source}{}\label{board_8h_source}\mbox{\hyperlink{board_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{field_8h}{field.h}}"{}}}
+\DoxyCodeLine{00014\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structboard}{board}}\{}
+\DoxyCodeLine{00015\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structboard_a213b93c5ce3001ff50aaca44686c8417}{length}};}
+\DoxyCodeLine{00016\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structboard_a554eb2727bc9b05e894c84d639c15817}{height}};}
+\DoxyCodeLine{00017\ \ \ \mbox{\hyperlink{field_8h_af4e6ca114114786cc23f3d5a1f8d14bf}{field\_type}}\ **\ \mbox{\hyperlink{structboard_a8c708aa788dfb265ffb0317e3b89f408}{fields}};}
+\DoxyCodeLine{00018\ \};}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00023\ \ \ \ \ \mbox{\hyperlink{structboard}{board}}();}
+\DoxyCodeLine{00028\ \ \ \ \ \mbox{\hyperlink{structboard}{board}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{structboard}{board}}\&\ other);}
+\DoxyCodeLine{00034\ \ \ \ \ \mbox{\hyperlink{structboard}{board}}(\textcolor{keywordtype}{int}\ length,\ \textcolor{keywordtype}{int}\ height);}
+\DoxyCodeLine{00040\ \ \ \ \ \mbox{\hyperlink{structboard}{board}}\&\ \mbox{\hyperlink{board_8h_ac8999cff8709786df0deeddecc6a4f66}{operator=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{structboard}{board}}\&\ other);}
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{board_8h_a470922def9204ce5a993c2525858c60e}{operator==}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{structboard}{board}}\&\ other)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keyword}{friend}\ std::ostream\&\ \mbox{\hyperlink{board_8h_af393ca90d55bb589d6dbe468960a138f}{operator<<}}(std::ostream\&\ os,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{structboard}{board}}\&\ b);}
+\DoxyCodeLine{00060\ \ \ \ \ \textcolor{keyword}{friend}\ std::istream\&\ \mbox{\hyperlink{board_8h_acadade7c0525a43a7d9af5b281530ef3}{operator>>}}(std::istream\&\ is,\ \mbox{\hyperlink{structboard}{board}}\&\ b);}
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{comment}{//\ Memory\ release\ method}}
+\DoxyCodeLine{00065\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{board_8h_a8f080f32859cd7de714683db8c1d4173}{release}}();}
+\DoxyCodeLine{00066\ \};}
+
+\end{DoxyCode}

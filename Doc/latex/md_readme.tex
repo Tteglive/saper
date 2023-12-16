@@ -1,0 +1,20 @@
+\chapter{Minesweeper}
+\hypertarget{md_readme}{}\label{md_readme}\index{Minesweeper@{Minesweeper}}
+\label{md_readme_autotoc_md0}%
+\Hypertarget{md_readme_autotoc_md0}%
+This project is a simple implementation of the classic Minesweeper game in C++. The game consists of two main components\+: the game board and the game logic.\hypertarget{md_readme_autotoc_md1}{}\doxysection{\texorpdfstring{Task Description}{Task Description}}\label{md_readme_autotoc_md1}
+The goal of this project is to create a simple version of the Minesweeper game using the C++ programming language. The game involves creating a board with mines, and the player needs to open cells on the board while avoiding the mines. Each open cell can contain a number indicating the number of mines in neighboring cells.\hypertarget{md_readme_autotoc_md2}{}\doxysection{\texorpdfstring{Game Rules}{Game Rules}}\label{md_readme_autotoc_md2}
+
+\begin{DoxyEnumerate}
+\item The player opens cells on the board by entering the row and column numbers (separated by a space).
+\item If a cell contains a bomb, the game ends, and the player loses.
+\item If a cell does not contain a bomb, the number of bombs in neighboring cells is revealed.
+\item The player continues to open cells, avoiding bombs, to win the game.
+\end{DoxyEnumerate}\hypertarget{md_readme_autotoc_md3}{}\doxysection{\texorpdfstring{Dependencies}{Dependencies}}\label{md_readme_autotoc_md3}
+
+\begin{DoxyItemize}
+\item Development environment -\/ Atom
+\item compiler -\/ MingW G++
+\item External libraries or dependencies -\/ no use of third party libraries except the standard C++ library.
+\end{DoxyItemize}\hypertarget{md_readme_autotoc_md4}{}\doxysection{\texorpdfstring{Application build method}{Application build method}}\label{md_readme_autotoc_md4}
+The MingW G++ compiler is used to build the application. The project includes three main files\+: main.\+cpp, board.\+cpp, and game.\+cpp. The build is done using the provided Makefile. To compile the project, you need to run the \textquotesingle{}make\textquotesingle{} command on the command line. This will create the executable file Minesweeper.\+exe. If you need to clean the created object files and the executable file, you need to run the \textquotesingle{}make clean\textquotesingle{} command. 

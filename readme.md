@@ -1,10 +1,19 @@
-# Minesweeper Project
+# Minesweeper
+This project is a simple implementation of the classic Minesweeper game in C++. The game consists of two main components: the game board and the game logic.
 
-This project is a laboratory implementation on the subject of C++. While implementing the laboratory ones, I also chose the game Minesweeper and declared its basic structures. The game in this case consists of two main components: the playing field and game logic.
+## Task Description
+The goal of this project is to create a simple version of the Minesweeper game using the C++ programming language. The game involves creating a board with mines, and the player needs to open cells on the board while avoiding the mines. Each open cell can contain a number indicating the number of mines in neighboring cells.
 
-## Project Structure
+## Game Rules
+1. The player opens cells on the board by entering the row and column numbers (separated by a space).
+2. If a cell contains a bomb, the game ends, and the player loses.
+3. If a cell does not contain a bomb, the number of bombs in neighboring cells is revealed.
+4. The player continues to open cells, avoiding bombs, to win the game.
 
-- `board.cpp` and `board.h`: Implementation of the Minesweeper game board, including initialization and display.
-- `field.cpp` and `field.h`: Definition of the `field` enum representing different cell states (empty, bomb).
-- `game.cpp` and `game.h`: Minesweeper game logic, including bomb placement and win-check.
-- `main.cpp`: Main program to run the Minesweeper game.
+## Dependencies
+- Development environment - Atom
+- compiler - MingW G++
+- External libraries or dependencies - no use of third party libraries except the standard C++ library.
+
+## Application build method
+The MingW G++ compiler is used to build the application. The project includes three main files: main.cpp, board.cpp, and game.cpp. The build is done using the provided Makefile. To compile the project, you need to run the 'make' command on the command line. This will create the executable file Minesweeper.exe. If you need to clean the created object files and the executable file, you need to run the 'make clean' command.
