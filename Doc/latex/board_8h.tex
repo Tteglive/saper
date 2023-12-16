@@ -1,0 +1,156 @@
+\doxysection{board.\+h File Reference}
+\hypertarget{board_8h}{}\label{board_8h}\index{board.h@{board.h}}
+
+
+Header file for the Minesweeper game board.  
+
+
+{\ttfamily \#include "{}field.\+h"{}}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structboard}{board}}
+\begin{DoxyCompactList}\small\item\em Represents the game board. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{board_8h_a2a97f34e7c9ed8ace6a2508bb2c6e2a2}\label{board_8h_a2a97f34e7c9ed8ace6a2508bb2c6e2a2} 
+{\bfseries board} ()
+\begin{DoxyCompactList}\small\item\em Constructor for the board. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{board_8h_a9b2a43a4b3b689f2b48916678bc710ed}{board}} (const \mbox{\hyperlink{structboard}{board}} \&other)
+\begin{DoxyCompactList}\small\item\em Copy constructor for the board. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{board_8h_afeac7d5dbc8d7c915b8c73a5c6581abf}{board}} (int length, int height)
+\begin{DoxyCompactList}\small\item\em Parameterized constructor for the board. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structboard}{board}} \& \mbox{\hyperlink{board_8h_ac8999cff8709786df0deeddecc6a4f66}{operator=}} (const \mbox{\hyperlink{structboard}{board}} \&other)
+\begin{DoxyCompactList}\small\item\em Assignment operator for the board. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{board_8h_a470922def9204ce5a993c2525858c60e}{operator==}} (const \mbox{\hyperlink{structboard}{board}} \&other) const
+\begin{DoxyCompactList}\small\item\em Equality comparison operator for the board. \end{DoxyCompactList}\item 
+std\+::ostream \& \mbox{\hyperlink{board_8h_af393ca90d55bb589d6dbe468960a138f}{operator$<$$<$}} (std\+::ostream \&os, const \mbox{\hyperlink{structboard}{board}} \&b)
+\begin{DoxyCompactList}\small\item\em Output stream operator for the board. \end{DoxyCompactList}\item 
+std\+::istream \& \mbox{\hyperlink{board_8h_acadade7c0525a43a7d9af5b281530ef3}{operator$>$$>$}} (std\+::istream \&is, \mbox{\hyperlink{structboard}{board}} \&b)
+\begin{DoxyCompactList}\small\item\em Input stream operator for the board. \end{DoxyCompactList}\item 
+\Hypertarget{board_8h_a8f080f32859cd7de714683db8c1d4173}\label{board_8h_a8f080f32859cd7de714683db8c1d4173} 
+void {\bfseries release} ()
+\begin{DoxyCompactList}\small\item\em Releases memory occupied by the board. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Header file for the Minesweeper game board. 
+
+Contains the definition of the \textquotesingle{}board\textquotesingle{} struct representing the game board. \begin{DoxyAuthor}{Author}
+Petcov Victor 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+2023 
+\end{DoxyDate}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{board_8h_a9b2a43a4b3b689f2b48916678bc710ed}\label{board_8h_a9b2a43a4b3b689f2b48916678bc710ed} 
+\index{board.h@{board.h}!board@{board}}
+\index{board@{board}!board.h@{board.h}}
+\doxysubsubsection{\texorpdfstring{board()}{board()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily board\+::board (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structboard}{board}} \&}]{other }\end{DoxyParamCaption})}
+
+
+
+Copy constructor for the board. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & The board to copy. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{board_8h_afeac7d5dbc8d7c915b8c73a5c6581abf}\label{board_8h_afeac7d5dbc8d7c915b8c73a5c6581abf} 
+\index{board.h@{board.h}!board@{board}}
+\index{board@{board}!board.h@{board.h}}
+\doxysubsubsection{\texorpdfstring{board()}{board()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily board\+::board (\begin{DoxyParamCaption}\item[{int}]{length,  }\item[{int}]{height }\end{DoxyParamCaption})}
+
+
+
+Parameterized constructor for the board. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em length} & Length of the board. \\
+\hline
+{\em height} & Height of the board. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{board_8h_af393ca90d55bb589d6dbe468960a138f}\label{board_8h_af393ca90d55bb589d6dbe468960a138f} 
+\index{board.h@{board.h}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!board.h@{board.h}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$()}{operator<<()}}
+{\footnotesize\ttfamily friend std\+::ostream \& operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{os,  }\item[{const \mbox{\hyperlink{structboard}{board}} \&}]{b }\end{DoxyParamCaption})}
+
+
+
+Output stream operator for the board. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em os} & Output stream. \\
+\hline
+{\em b} & Board to output. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Reference to the output stream. 
+\end{DoxyReturn}
+\Hypertarget{board_8h_ac8999cff8709786df0deeddecc6a4f66}\label{board_8h_ac8999cff8709786df0deeddecc6a4f66} 
+\index{board.h@{board.h}!operator=@{operator=}}
+\index{operator=@{operator=}!board.h@{board.h}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structboard}{board}} \& board\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structboard}{board}} \&}]{other }\end{DoxyParamCaption})}
+
+
+
+Assignment operator for the board. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & The board to copy. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Reference to the assigned board. 
+\end{DoxyReturn}
+\Hypertarget{board_8h_a470922def9204ce5a993c2525858c60e}\label{board_8h_a470922def9204ce5a993c2525858c60e} 
+\index{board.h@{board.h}!operator==@{operator==}}
+\index{operator==@{operator==}!board.h@{board.h}}
+\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}}
+{\footnotesize\ttfamily bool board\+::operator== (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structboard}{board}} \&}]{other }\end{DoxyParamCaption}) const}
+
+
+
+Equality comparison operator for the board. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & The board to compare. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the boards are equal, false otherwise. 
+\end{DoxyReturn}
+\Hypertarget{board_8h_acadade7c0525a43a7d9af5b281530ef3}\label{board_8h_acadade7c0525a43a7d9af5b281530ef3} 
+\index{board.h@{board.h}!operator$>$$>$@{operator$>$$>$}}
+\index{operator$>$$>$@{operator$>$$>$}!board.h@{board.h}}
+\doxysubsubsection{\texorpdfstring{operator$>$$>$()}{operator>>()}}
+{\footnotesize\ttfamily friend std\+::istream \& operator$>$$>$ (\begin{DoxyParamCaption}\item[{std\+::istream \&}]{is,  }\item[{\mbox{\hyperlink{structboard}{board}} \&}]{b }\end{DoxyParamCaption})}
+
+
+
+Input stream operator for the board. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em is} & Input stream. \\
+\hline
+{\em b} & Board to input. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Reference to the input stream. 
+\end{DoxyReturn}
