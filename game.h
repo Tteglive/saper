@@ -29,4 +29,6 @@ struct game{
     * @param num_bombs Number of bombs to place.
     */
   static void place_bombs(board& b, int num_bombs);
+  void open_cell(int row, int col);
+  bool check_win() const;
 };
